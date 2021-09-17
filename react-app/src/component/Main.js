@@ -1,5 +1,7 @@
 import React, { useEffect, useState }  from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
+
 
 export default function Main() {
     const [top, setTop] = useState([]);
@@ -27,7 +29,7 @@ export default function Main() {
                     </div>
                 )
             }) }
-            <button>FOOD</button>
+            <Link to="/nation">FOOD</Link>
             <button>Drink</button>
             <button>CREATE</button>
         </main>

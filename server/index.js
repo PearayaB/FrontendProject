@@ -35,6 +35,19 @@ app.get('/api/top_menu', (req, res) => {
     });
 });
 
+app.get('/api/randomNation', (req,res) => {
+    const randomNation = req.query.randomNation;
+    const arr = randomNation.split(',');
+    const sql = "SELECT * FROM nation WHERE nt_id IN (?)";
+    connect.query(sql, [arr], (err, result) => {
+        if (err) {
+            throw err;
+        } else {
+            return res.status(200).json(result);
+        }
+    })
+})
+
 app.listen(5050,()=>{
     console.log('server running on port 5050');
 });
