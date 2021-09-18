@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Nation from "./pages/Nation";
 import Ingredient from "./pages/Ingredient";
 import Drink from "./pages/Drink";
+import MenuFood from "./pages/MenuFood";
+// import MenuDrink from "./pages/menuDrink";
+
 
 function App() {
   return (
@@ -16,12 +19,9 @@ function App() {
       <Route path="/listFood">
           <listFood />
         </Route>
-      <Route path="/menuFood">
-          <menuFood />
-        </Route>
-      <Route path="/menuDrink">
-          <menuDrink />
-        </Route>
+      <Route path="/MenuFood">
+          <MenuFood />
+      </Route>
       <Route path="/Drink">
           <Drink />
         </Route>

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Header from '../component/Header';
 import axios from 'axios';
 import { useRandomDrink } from '../use'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export default function Drink() {
     const [drink, setDrink] = useState([]);
     const [random] = useRandomDrink(6);
+    
     
     useEffect(() => {
         const getDrink = async () => {
@@ -26,8 +27,9 @@ export default function Drink() {
 
     const getNewData = (e) => {
         e.preventDefault();
-        document.location.reload();
     }
+
+    
 
     return (
         <>
@@ -39,9 +41,11 @@ export default function Drink() {
                 <div>
                     { drink.map((value) => {
                         return (
-                            <div key={value.In_id}>
-                                <span>{value.Ingredient_name}</span>
-                            </div>
+                            <button type="button">
+                                <div key={value.In_id}>
+                                    <span>{value.Ingredient_name}</span>
+                                </div>
+                            </button>
                         )
                     }) }
                 </div>

@@ -3,11 +3,14 @@ import Header from '../component/Header';
 import axios from 'axios';
 import { useRandom } from '../use'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { fetchIngredient } from '../actions/ingredientAction';
 
 
 export default function Ingredient() {
     const [ingredient,setIngredient] = useState([]);
     const [random] = useRandom(6);
+    const dispatch = useDispatch();
     
     useEffect(() => {
         const getIngredient = async () => {
@@ -24,6 +27,10 @@ export default function Ingredient() {
         getIngredient();
     }, [random]);
 
+    const fetch_ingredient = (id) => {
+        dispatch(fetchIngredient({ id }));
+    }
+
     const getNewData = (e) => {
         e.preventDefault();
         document.location.reload();
@@ -38,15 +45,17 @@ export default function Ingredient() {
                 <div>
                     { ingredient.map((value) => {
                         return (
-                            <div key={value.In_id}>
-                                <span>{value.Ingredient_name}</span>
-                            </div>
+                            <button type="button" onClick={() => { fetch_ingredient(value.Ingredient_name) }}>
+                                <div key={value.In_id}>
+                                    <span>{value.Ingredient_name}</span>
+                                </div>
+                            </button>
                         )
                     }) }
                 </div>
                 <div>
                 <Link to="/" onClick={getNewData}>Try again</Link>
-                <Link to="/Menu">Next!</Link>
+                <Link to="/MenuFood">Next!</Link>
                 </div>
             </main>
             </>
