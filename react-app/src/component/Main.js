@@ -1,7 +1,8 @@
 import React, { useEffect, useState }  from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
+import './style.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Main() {
     const [top, setTop] = useState([]);
@@ -21,11 +22,10 @@ export default function Main() {
 
     return (
         <main>
-            <span>TOP 5</span>
-            { top.map((value) => {
-                return (
-                    <div key={value.id}>
-                        <span>{ value.name_menu }</span>
+            <div className="container">
+                <div className="row justify-content-start align-items-center">
+                    <div className="top">
+                        <h1>TOP 5</h1>
                     </div>
                 )
             }) }

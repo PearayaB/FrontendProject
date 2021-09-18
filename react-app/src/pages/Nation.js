@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { fetchNation } from "../actions/nationAction";
 import { useDispatch } from "react-redux";
 
+
 export default function Nation() {
   const [nation, setNation] = useState([]);
   const dispatch = useDispatch();
