@@ -4,53 +4,51 @@ import axios from 'axios';
 import { useRandom } from '../use'
 import { Link } from 'react-router-dom'
 
-export default function Nation() {
-    const [nation, setNation] = useState([]);
+
+export default function Ingredient() {
+    const [ingredient,setIngredient] = useState([]);
     const [random] = useRandom(6);
     
     useEffect(() => {
-        const getNation = async () => {
+        const getIngredient = async () => {
             try {
                 const str = random.join(',');
-                const res = await axios.get(`http://localhost:5050/api/randomNation?randomNation=${str}`);
+                const res = await axios.get(`http://localhost:5050/api/randomIngredient?randomIngredient=${str}`);
                 
-                setNation(res.data);
+                setIngredient(res.data);
             } catch (error) {
                 console.log(error.response);
             }
         }
 
-        getNation();
+        getIngredient();
     }, [random]);
 
     const getNewData = (e) => {
         e.preventDefault();
         document.location.reload();
     }
-
     return (
         <>
             <Header />
             <main>
                 <div>
-                <span>Nationality</span>
+                <span>Ingredient</span>
                 </div>
                 <div>
-                    { nation.map((value) => {
+                    { ingredient.map((value) => {
                         return (
-                            <div key={value.nt_id}>
-                                <span>{value.nation_name}</span>
+                            <div key={value.In_id}>
+                                <span>{value.Ingredient_name}</span>
                             </div>
                         )
                     }) }
                 </div>
                 <div>
                 <Link to="/" onClick={getNewData}>Try again</Link>
-                <Link to="/Ingredient">Next!</Link>
+                <Link to="/Menu">Next!</Link>
                 </div>
             </main>
-        </>
+            </>
     )
 }
-
-

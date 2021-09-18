@@ -30,7 +30,7 @@ export default function Main() {
                 )
             }) }
             <Link to="/nation">FOOD</Link>
-            <button>Drink</button>
+            <Link to="/Drink">DRINK</Link>
             <button>CREATE</button>
         </main>
     )

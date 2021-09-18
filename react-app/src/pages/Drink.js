@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../component/Header';
 import axios from 'axios';
-import { useRandom } from '../use'
+import { useRandomDrink } from '../use'
 import { Link } from 'react-router-dom'
 
-export default function Nation() {
-    const [nation, setNation] = useState([]);
-    const [random] = useRandom(6);
+export default function Drink() {
+    const [drink, setDrink] = useState([]);
+    const [random] = useRandomDrink(6);
     
     useEffect(() => {
-        const getNation = async () => {
+        const getDrink = async () => {
             try {
                 const str = random.join(',');
-                const res = await axios.get(`http://localhost:5050/api/randomNation?randomNation=${str}`);
+                console.log(str);
+                const res = await axios.get(`http://localhost:5050/api/randomDrink?randomDrink=${str}`);
                 
-                setNation(res.data);
+                setDrink(res.data);
             } catch (error) {
                 console.log(error.response);
             }
         }
 
-        getNation();
+        getDrink();
     }, [random]);
 
     const getNewData = (e) => {
@@ -33,20 +34,20 @@ export default function Nation() {
             <Header />
             <main>
                 <div>
-                <span>Nationality</span>
+                <span>DRINK</span>
                 </div>
                 <div>
-                    { nation.map((value) => {
+                    { drink.map((value) => {
                         return (
-                            <div key={value.nt_id}>
-                                <span>{value.nation_name}</span>
+                            <div key={value.In_id}>
+                                <span>{value.Ingredient_name}</span>
                             </div>
                         )
                     }) }
                 </div>
                 <div>
                 <Link to="/" onClick={getNewData}>Try again</Link>
-                <Link to="/Ingredient">Next!</Link>
+                <Link to="/menuDrink">Next!</Link>
                 </div>
             </main>
         </>
