@@ -5,24 +5,29 @@ import Home from "./pages/Home";
 import Nation from "./pages/Nation";
 import Ingredient from "./pages/Ingredient";
 import Drink from "./pages/Drink";
-import MenuFood from "./pages/MenuFood";
-// import MenuDrink from "./pages/menuDrink";
+import MenuFood from "./pages/menuFood";
+import ListFood from "./pages/ListFood";
+import ListDrink from "./pages/ListDrink"
+import MenuDrink from "./pages/menuDrink";
 
 
 function App() {
   return (
     <div className="App">
       <Switch>
-      <Route path="/listDrink">
-          <listDrink />
+        <Route path="/ListDrink">
+          <ListDrink />
         </Route>
-      <Route path="/listFood">
-          <listFood />
+        <Route path="/menuDrink">
+          <MenuDrink />
         </Route>
-      <Route path="/MenuFood">
+        <Route path="/ListFood">
+          <ListFood />
+        </Route>
+        <Route path="/MenuFood">
           <MenuFood />
-      </Route>
-      <Route path="/Drink">
+        </Route>
+        <Route path="/Drink">
           <Drink />
         </Route>
         <Route path="/Ingredient">

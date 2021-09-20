@@ -96,4 +96,4 @@ const useRandomMenu = (number) => {
 
     return [randomArr];
 }
-export { useRandom,useRandomDrink };
+export { useRandom,useRandomDrink,useRandomMenu };

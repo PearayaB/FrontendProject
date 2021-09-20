@@ -81,9 +81,35 @@ app.get('/api/randomDrink', (req,res) => {
 
             return res.status(200).json(data);
         }
-    })
+    });
+});
+
+app.get('/api/menuFood',(req,res)=>{
+    const nation = req.query.nt;
+    const ing = req.query.ing;
+    const sql = "SELECT menu.name_menu, menu.image_menu FROM menu INNER JOIN ingredient ON menu.In_id = ingredient.In_id INNER JOIN nation ON menu.nt_id = nation.id WHERE ingredient.Ingredient_name = ? AND nation.nation_name = ?";
+    connect.query(sql, [ing, nation], (err, result) => {
+        if (err) {
+            throw err;
+        } else {
+            return res.status(200).json(result);
+        }
+    });
 })
 
-app.listen(5050,()=>{
+app.get('/api/menuDrink',(req,res)=>{
+    const ing = req.query.ing;
+    const sql = "SELECT menu_drink.name_menu, menu_drink.image_menu, ingredient.Ingredient_name FROM menu_drink INNER JOIN ingredient ON menu_drink.In_id = ingredient.In_id WHERE ingredient.Ingredient_name = ?";
+    connect.query(sql, [ing], (err, result) => {
+        if (err) {
+            throw err;
+        } else {
+            return res.status(200).json(result);
+        }
+    });
+})
+
+
+app.listen(5050, () => {
     console.log('server running on port 5050');
 });
