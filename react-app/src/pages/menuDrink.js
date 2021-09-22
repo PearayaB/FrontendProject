@@ -41,31 +41,38 @@ export default function MenuDrink() {
             <Header />
             <main>
                 
-                <div>
-                    <span>Drink</span>
-                    <span>{ ingredient.id }</span>
+                <div className="container">
+                    <div className="row justify-content-start align-items-center">
+                    <div className="top1">
+                        <h2>Drink</h2>
+                        <h3>{ ingredient.id }</h3>
+                    </div>
+                    
+                <div className="col">
+                    <span>Menu</span>
                 </div>
-                <div>
-                <span>Menu</span>
-                </div>
-                <div>
+                <div className="Box row">
                     { menuDrink.map((value, index) => {
                         return (
                             <>
+                            <div className="Box1 col-6">
                             <img src={value.image_menu} alt="" />
-                            <button  type="button" onClick={() => { getDrink(value.name_menu) }}>
+                            </div>
+                            <div className="Box2 col-6">
+                            <button className="btn4" type="button" onClick={() => { getDrink(value.name_menu) }}>
                                 <div>
-                                    <span>{value.name_menu}</span>
-                                    
+                                    {value.name_menu}
                                 </div>
                             </button>
+                            </div> 
                             </>
                         )
                     }) }
                 </div>
-                <div>
-                {/* <Link to="/" onClick={getNewData}>Try again</Link> */}
-                <Link to="/ListDrink">Next!</Link>
+                
+                <div className="col"><button className="btn2"><Link to="/" className='text-link'>Try again</Link></button></div>
+                <div className="col"><button className="btn1"><Link to="/ListDrink" className='text-link'> Next! </Link></button></div>
+                </div>
                 </div>
             </main>
         </>

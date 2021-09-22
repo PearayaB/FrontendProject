@@ -39,38 +39,50 @@ export default function MenuFood() {
         <>
             <Header />
             <main>
-                <div>
-                <span>Nationality</span>
-                <span>{ nation.id }</span>
-                </div>
-                <div>
-                    <span>Ingredient</span>
-                    <span>{ ingredient.id }</span>
-                </div>
-                <div>
-                <span>Menu</span>
-                </div>
-                <div>
-                    { menu.map((value, index) => {
-                        return (
-                            <>
-                            <img src={value.image_menu} alt="" />
-                            <button key={index} type="button" onClick={() => { getFood(value.name_menu) }}>
-                                <div>
-                                    <span>{value.name_menu}</span>
-                                    
+            <div className="container">
+                <div className="row justify-content-start align-items-center">
+                    <div className="col-6">
+                        <div className="top1">
+                            <h2>Nationality</h2>
+                            <h3>{ nation.id }</h3>
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="top1">
+                            <h2>Ingredient</h2>
+                            <h3>{ ingredient.id }</h3>
+                        </div>
+                    </div>
+                    <div className="col4">
+                        <span>Menu</span>
+                    </div>
+                    <div className="Box row">
+                        { menu.map((value, index) => {
+                            return (
+                                <>
+                                <div className="Box1 col-6">
+                                <img src={value.image_menu} alt="" />
                                 </div>
-                            </button>
-                            </>
-                        )
-                    }) }
+                                <div className="Box2 col-6">
+                                <button className="btn4" key={index} type="button" onClick={() => { getFood(value.name_menu) }}>
+                                    <div>
+                                        {value.name_menu}
+                                    </div>
+                                
+                                </button>
+                                </div>  
+                                </>
+                            )
+                        }) }
+                    </div>
+                
+                
+                <div className="col"><button className="btn2"><Link to="/" className='text-link' /*onClick={getNewData}*/>Try again</Link></button></div>
+                <div className="col"><button className="btn1"><Link to="/listFood" className='text-link'>Next!</Link></button></div>
+                
                 </div>
-                <div>
-                {/* <Link to="/" onClick={getNewData}>Try again</Link> */}
-                <Link to="/listFood">Next!</Link>
                 </div>
             </main>
         </>
     )
 }
-

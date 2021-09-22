@@ -39,25 +39,31 @@ export default function Ingredient() {
         <>
             <Header />
             <main>
-                <div>
-                <span>Ingredient</span>
-                </div>
-                <div>
+            <div className="container">
+                <div className="row justify-content-start align-items-center">
+                    <div className="top">
+                        <h1>Ingredient</h1>
+                    </div>
+                <div className="area">
+                <div className="col1">
                     { ingredient.map((value) => {
                         return (
-                            <button type="button" onClick={() => { fetch_ingredient(value.Ingredient_name) }}>
-                                <div key={value.In_id}>
+                            <button type="button" className="btn3" onClick={() => { fetch_ingredient(value.Ingredient_name) }}>
+                                <div className="textkey" key={value.In_id}>
                                     <span>{value.Ingredient_name}</span>
                                 </div>
                             </button>
                         )
                     }) }
                 </div>
-                <div>
-                <Link to="/" onClick={getNewData}>Try again</Link>
-                <Link to="/MenuFood">Next!</Link>
                 </div>
+                
+                <div className="col"><button className="btn2"><Link to="/" className='text-link' onClick={getNewData}>Try again</Link></button></div>
+                <div className="col"><button className="btn1"><Link to="/MenuFood" className='text-link'>Next!</Link></button></div>
+            </div>
+            </div>
             </main>
-            </>
+
+        </>
     )
 }

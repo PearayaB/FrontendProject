@@ -19,7 +19,6 @@ export default function Main() {
 
         getTopMenu();
     }, []);
-
     return (
         <main>
             <div className="container">
@@ -27,11 +26,20 @@ export default function Main() {
                     <div className="top">
                         <h1>TOP 5</h1>
                     </div>
-                )
-            }) }
-            <Link to="/nation">FOOD</Link>
-            <Link to="/Drink">DRINK</Link>
-            <button>CREATE</button>
+                    { top.map((value) => {
+                        return (
+                            <div className="menu">
+                                <div key={value.id}>
+                                    <span>{ value.name_menu }</span>
+                                </div>
+                            </div>
+                        )
+                    }) }
+                <div className="col"><button className="btn1"><Link to="/nation" className='text-link'>FOOD</Link></button></div>
+                <div className="col"><button className="btn1"><Link to="/Drink" className='text-link'>DRINK</Link></button></div>
+
+                </div>
+            </div>
         </main>
     )
 }

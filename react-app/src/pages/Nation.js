@@ -41,30 +41,31 @@ export default function Nation() {
     <>
       <Header />
       <main>
-        <div>
-          <span>Nationality</span>
-        </div>
-        <div>
-          {nation.map((value) => {
-            return (
-              <button
-                type="button"
-                onClick={() => {
+        <div className="container">
+          <div className="row justify-content-start align-items-center">
+              <div className="top">
+                 <h1>Nationality</h1>
+              </div>
+              <div className="area">
+              <div className="col1">
+                {nation.map((value) => {
+                  return (
+                <button type="button" className="btn3" onClick={() => {
                   fetch_nation(value.nation_name);
-                }}
-              >
-                <div key={value.nt_id}>
+                }}>
+                <div className="textkey" key={value.nt_id}>
                   <span>{value.nation_name}</span>
                 </div>
-              </button>
-            );
-          })}
-        </div>
-        <div>
-          <Link to="/" onClick={getNewData}>
-            Try again
-          </Link>
-          <Link to="/Ingredient">Next!</Link>
+                </button>
+              );
+              })}
+              </div>
+              </div>
+        
+          <div className="col"><button className="btn2"><Link to="/" className='text-link' onClick={getNewData}>Try again</Link></button></div>
+          <div className="col"><button className="btn1"><Link to="/Ingredient" className='text-link'>Next!</Link></button></div>
+        
+          </div>
         </div>
       </main>
     </>

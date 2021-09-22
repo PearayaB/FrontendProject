@@ -6,8 +6,8 @@ import Nation from "./pages/Nation";
 import Ingredient from "./pages/Ingredient";
 import Drink from "./pages/Drink";
 import MenuFood from "./pages/menuFood";
-import ListFood from "./pages/ListFood";
-import ListDrink from "./pages/ListDrink"
+import ListFood from "./pages/listFood";
+import ListDrink from "./pages/listDrink"
 import MenuDrink from "./pages/menuDrink";
 
 

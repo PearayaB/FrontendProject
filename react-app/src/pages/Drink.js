@@ -41,26 +41,32 @@ export default function Drink() {
         <>
             <Header />
             <main>
-                <div>
-                <span>DRINK</span>
+                <div className="container">
+                    <div className="row justify-content-start align-items-center">
+                        <div className="top">
+                            <h1>DRINK</h1>
+                        </div>
+                    
+                    <div className="area">
+                    <div className="col1">
+                        { drink.map((value) => {
+                            return (
+                                <button type="button" className="btn3" onClick={() => { set(value.Ingredient_name) }}>
+                                    <div className="textkey" key={value.In_id}>
+                                        <span>{value.Ingredient_name}</span>
+                                    </div>
+                                </button>
+                            )
+                        }) }
+                    </div>
+                    </div>
+                
+                <div className="col"><button className="btn2"><Link to="/" className='text-link' onClick={getNewData}>Try again</Link></button></div>
+                <div className="col"><button className="btn1"><Link to="/menuDrink" className='text-link'>Next!</Link></button></div>
                 </div>
-                <div>
-                    { drink.map((value) => {
-                        return (
-                            <button type="button" onClick={() => { set(value.Ingredient_name) }}>
-                                <div key={value.In_id}>
-                                    <span>{value.Ingredient_name}</span>
-                                </div>
-                            </button>
-                        )
-                    }) }
-                </div>
-                <div>
-                <Link to="/" onClick={getNewData}>Try again</Link>
-                <Link to="/menuDrink">Next!</Link>
                 </div>
             </main>
-        </>
+        </> 
     )
 }
 
