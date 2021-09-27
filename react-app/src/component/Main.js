@@ -37,7 +37,7 @@ export default function Main() {
                     }) }
                 <div className="col"><button className="btn1"><Link to="/nation" className='text-link'>FOOD</Link></button></div>
                 <div className="col"><button className="btn1"><Link to="/Drink" className='text-link'>DRINK</Link></button></div>
-
+                <div className="col"><button className="btn1"><Link to="/Create" className='text-link'>CREATE</Link></button></div>
                 </div>
             </div>
         </main>

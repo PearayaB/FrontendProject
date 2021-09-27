@@ -38,7 +38,7 @@ export default function MenuFood() {
     return (
         <>
             <Header />
-            <main>
+            <body>
             <div className="container">
                 <div className="row justify-content-start align-items-center">
                     <div className="col-6">
@@ -82,7 +82,7 @@ export default function MenuFood() {
                 
                 </div>
                 </div>
-            </main>
+            </body>
         </>
     )
 }

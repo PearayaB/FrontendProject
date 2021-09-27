@@ -38,7 +38,7 @@ export default function Ingredient() {
     return (
         <>
             <Header />
-            <main>
+            <body>
             <div className="container">
                 <div className="row justify-content-start align-items-center">
                     <div className="top">
@@ -62,7 +62,7 @@ export default function Ingredient() {
                 <div className="col"><button className="btn1"><Link to="/MenuFood" className='text-link'>Next!</Link></button></div>
             </div>
             </div>
-            </main>
+            </body>
 
         </>
     )

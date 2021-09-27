@@ -9,7 +9,7 @@ import MenuFood from "./pages/menuFood";
 import ListFood from "./pages/listFood";
 import ListDrink from "./pages/listDrink"
 import MenuDrink from "./pages/menuDrink";
-
+import Create from "./pages/Create";
 
 function App() {
   return (
@@ -35,6 +35,10 @@ function App() {
         </Route>
         <Route path="/nation">
           <Nation />
+        </Route>
+        
+        <Route path="/Create">
+          <Create />
         </Route>
         <Route path="/">
           <Home />

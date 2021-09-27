@@ -16,7 +16,7 @@ export default function ListFood() {
     return (
         <>
             <Header />
-            <main>
+            <body>
                 <div className="container">
                     <div className="row justify-content-start align-items-center">
                         <div className="top">
@@ -31,7 +31,7 @@ export default function ListFood() {
                     <Link className="a" to="/Home">Enjoy Eating</Link>
                 </div>
                 </div>
-            </main>
+            </body>
         </>
     )
 }

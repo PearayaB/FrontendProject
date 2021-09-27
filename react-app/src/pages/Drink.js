@@ -40,7 +40,7 @@ export default function Drink() {
     return (
         <>
             <Header />
-            <main>
+            <body>
                 <div className="container">
                     <div className="row justify-content-start align-items-center">
                         <div className="top">
@@ -65,7 +65,7 @@ export default function Drink() {
                 <div className="col"><button className="btn1"><Link to="/menuDrink" className='text-link'>Next!</Link></button></div>
                 </div>
                 </div>
-            </main>
+            </body>
         </> 
     )
 }

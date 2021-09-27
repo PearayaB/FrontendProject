@@ -40,7 +40,7 @@ export default function Nation() {
   return (
     <>
       <Header />
-      <main>
+      <body>
         <div className="container">
           <div className="row justify-content-start align-items-center">
               <div className="top">
@@ -67,7 +67,7 @@ export default function Nation() {
         
           </div>
         </div>
-      </main>
+      </body>
     </>
   );
 }
