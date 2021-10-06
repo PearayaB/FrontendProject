@@ -1,41 +1,35 @@
 import React from 'react'
 
 function App() {
+  
   return (
     <div className="container">
       <div className="row mt-4">
         <div className="col-12 col-md-6 offset-md-3">
           <h2 className="my-4 text-center">CREATE</h2>
-          <form>
+          <form action =" " method="post" >
             <div className="form-group">
-              <label for="exampleInputEmail1">Nation</label>
+              <label for="inputnamemenu">Menu</label>
               <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
+                type="text"
+                name = "mymenu"
               />
-            </div>
-            <div className="form-group">
-              <label for="exampleInputPassword1">Ingredient</label>
+               <label for="inputnamenation">Nation</label>
               <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
+                type="text"
+                name = "nation"
               />
-            </div>
-            <div className="form-check mb-4">
+               <label for="inputnameingredients">Ingredients</label>
               <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
+                type="text"
+                name = "ingredients"
               />
-              <label className="form-check-label" for="exampleCheck1">
-                Accept term and conditions
-              </label>
-            </div>
+               <label for="inputimgmenu">Image Menu</label>
+              <input
+                type="url"
+                name = "imgmenu"
+              />
+            </div>       
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
