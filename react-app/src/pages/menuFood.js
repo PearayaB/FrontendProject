@@ -28,7 +28,7 @@ export default function MenuFood() {
 
 
         getFood();
-    }, [dispatch, ingredient.id, nation.id]);
+    }, [ dispatch,ingredient.id, nation.id]);
 
     const getFood = (name_menu) => {
         dispatch(fetchSave({ name_menu }));

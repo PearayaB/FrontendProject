@@ -73,7 +73,6 @@ function App() {
         <Route path="/nation">
           <Nation />
         </Route>
-        
         <Route path="/Create">
           <Create />
         </Route>

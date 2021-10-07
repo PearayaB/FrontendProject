@@ -15,7 +15,12 @@ const userData = {
   password: "123456",
   name: "Pimmyeiei",
   username: "pimmy",
-  isAdmin: true
+  isAdmin: true,
+  userId:"54589",
+  username:"punch",
+  password:"157895",
+  name:"Punchcy",
+  isAdmin : true
 };
 
 // enable CORS

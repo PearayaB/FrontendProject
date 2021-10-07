@@ -28,7 +28,7 @@ export default function ListFood() {
                     <button className="btn2" type="button" onClick={() => { deleteMenu() }}> DELETE </button>
                 </div>              
                 <div className="Enjoy">
-                    <Link className="a" to="/Home">Enjoy Eating</Link>
+                    <Link className="a" to="/">Enjoy Eating</Link>
                 </div>
                 </div>
             </body>

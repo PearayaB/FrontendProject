@@ -29,7 +29,7 @@ export default function MenuDrink() {
 
 
         getDrink();
-    }, [dispatch, ingredient.id]);
+    }, [ dispatch,ingredient.id]);
 
     const getDrink = (name_menu) => {
         dispatch(fetchSave({ name_menu }));
