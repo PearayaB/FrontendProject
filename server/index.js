@@ -109,7 +109,64 @@ app.get('/api/menuDrink',(req,res)=>{
     });
 })
 
+app.get("/Mymenu", (req, res) => {
+    connect.query("SELECT * FROM addmenu", (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+app.post("/mymenu", (req, res) => {
+  const namemenu = req.body.namemenu;
+  const price = req.body.price;
+  const nation = req.body.nation;
+  const ingredeint = req.body.ingredeint;
+
+  connect.query(
+    "INSERT INTO addmenu (namemenu, price, nation, ingredeint) VALUES (?,?,?,?)",
+    [namemenu, price, nation, ingredeint],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values Inserted");
+      }
+    }
+  );
+});
+
+app.put("/update", (req, res) => {
+  const id = req.body.id;
+  const price = req.body.price;
+  connect.query(
+    "UPDATE addmenu SET price = ? WHERE id = ?",
+    [price, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
+app.delete("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  connect.query("DELETE FROM addmenu WHERE id = ?", id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 app.listen(5050, () => {
     console.log('server running on port 5050');
 });
+
+
